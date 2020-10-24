@@ -27,7 +27,6 @@ const Products = () => {
     };
 
     console.log(cartItems);
-    console.log(product);
     addItem(product);
   };
 
@@ -45,7 +44,7 @@ const Products = () => {
             </StyledProductDescription>
             <StyledProductPrice>
               {formatCurrencyString({
-                value: product.amount,
+                value: product.price,
                 currency: product.currency,
                 language: navigator.language,
               })}

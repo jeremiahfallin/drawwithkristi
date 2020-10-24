@@ -15,7 +15,7 @@ import {
 } from "./styles";
 
 const Products = () => {
-  const { addItem, cartItems } = useShoppingCart();
+  const { addItem, cartDetails, cartCount } = useShoppingCart();
 
   const handleSubmit = async (event, product) => {
     event.preventDefault();
@@ -26,7 +26,6 @@ const Products = () => {
       quantity: Number(form.get("quantity")),
     };
 
-    console.log(cartItems);
     addItem(product);
   };
 

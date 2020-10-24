@@ -1,53 +1,81 @@
 import React from "react";
-import { useShoppingCart } from "use-shopping-cart";
+import { useShoppingCart, formatCurrencyString } from "use-shopping-cart";
+import {
+  StyledCartItemContainer,
+  StyledCartBody,
+  StyledCartImage,
+  StyledCartTitle,
+  StyledCartPrice,
+  StyledCartButton,
+  StyledCartQuantity,
+  StyledCartItemQuantityContainer,
+  StyledCartQuantityText,
+} from "./styles";
 
-export function CartItems() {
-  const {
-    cartDetails,
-    cartItems,
-    decrementItem,
-    incrementItem,
-    removeItem,
-  } = useShoppingCart();
+import styled from "styled-components";
 
-  console.log(cartItems);
+const StyledCartHeader = styled.header`
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid lightgrey;
+`;
 
-  const cart = [];
-  // Note: Object.keys().map() takes 2x as long as a for-in loop
+const StyledCartHeaderTitle = styled.h2`
+  line-height: 1.1;
+  font-size: 2em;
+`;
+
+export default function CartItems() {
+  const { cartDetails, setItemQuantity, removeItem } = useShoppingCart();
+
+  const options = [];
+  for (let quantity = 1; quantity <= 10; ++quantity)
+    options.push(
+      <option key={quantity} value={quantity}>
+        Qty: {quantity}
+      </option>
+    );
+
+  const cart = [
+    <StyledCartHeader key="title">
+      <StyledCartHeaderTitle>Shopping Cart</StyledCartHeaderTitle>
+    </StyledCartHeader>,
+  ];
   for (const sku in cartDetails) {
     const cartEntry = cartDetails[sku];
-
-    // all of your basic product data still exists (i.e. name, image, price)
     cart.push(
-      <article>
-        {/* image here */}
-        {/* name here */}
-        {/* formatted total price of that item */}
-        <p>Line total: {cartEntry.formattedValue}</p>
-
-        {/* What if we want to remove one of the item... or add one */}
-        <button
-          onClick={() => decrementItem(cartEntry.sku)}
-          aria-label={`Remove one ${cartEntry.name} from your cart`}
-        >
-          -
-        </button>
-        <p>Quantity: {cartEntry.quantity}</p>
-        <button
-          onClick={() => incrementItem(cartEntry.sku)}
-          aria-label={`Add one ${cartEntry.name} to your cart`}
-        >
-          +
-        </button>
-
-        {/* What if we don't want this product at all */}
-        <button
-          onClick={() => removeItem(cartEntry.sku)}
-          aria-label={`Remove all ${cartEntry.name} from your cart`}
-        >
-          Remove
-        </button>
-      </article>
+      <StyledCartItemContainer key={cartEntry.sku}>
+        <StyledCartTitle>{cartEntry.name}</StyledCartTitle>
+        <StyledCartBody>
+          <StyledCartImage src={cartEntry.image} alt={cartEntry.name} />
+          {/* <StyledCartPrice>Total: {cartEntry.formattedValue}</StyledCartPrice> */}
+          <StyledCartItemQuantityContainer>
+            <StyledCartQuantity
+              id="quantity-select"
+              defaultValue={cartEntry.quantity}
+              onChange={event => {
+                setItemQuantity(sku, event.target.value);
+              }}
+            >
+              {options}
+            </StyledCartQuantity>
+            <StyledCartPrice>
+              {formatCurrencyString({
+                value: cartEntry.price,
+                currency: cartEntry.currency,
+              })}
+            </StyledCartPrice>
+            <StyledCartButton
+              onClick={() => removeItem(cartEntry.sku)}
+              aria-label={`Remove all ${cartEntry.name} from your cart`}
+            >
+              Remove
+            </StyledCartButton>
+          </StyledCartItemQuantityContainer>
+        </StyledCartBody>
+      </StyledCartItemContainer>
     );
   }
 

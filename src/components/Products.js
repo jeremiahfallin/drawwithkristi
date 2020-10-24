@@ -46,7 +46,6 @@ const Products = () => {
               {formatCurrencyString({
                 value: product.price,
                 currency: product.currency,
-                language: navigator.language,
               })}
             </StyledProductPrice>
             <StyledPaymentForm onSubmit={e => handleSubmit(e, product)}>

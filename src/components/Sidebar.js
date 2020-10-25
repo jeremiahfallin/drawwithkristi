@@ -6,11 +6,13 @@ import Socials from "./Socials";
 
 const StyledSidebar = styled.div`
   display: grid;
-  grid-template-rows: 1fr 2fr 2fr;
-  grid-template-columns: 3fr 2fr;
-  grid-row-gap: 30px;
   width: 100%;
-  height: 100vh;
+  @media only screen and (min-width: 600px) {
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-columns: 3fr 2fr;
+    grid-row-gap: 30px;
+    height: 100vh;
+  }
   li a {
     color: #ff74ab;
   }
@@ -18,29 +20,44 @@ const StyledSidebar = styled.div`
   @media only screen and (max-width: 900px) {
     padding-left: 10px;
   }
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+`;
+
+const StyledSidebarTitle = styled.div`
+  @media only screen and (min-width: 600px) {
+    grid-column: -2/-1;
+    font-size: 32px;
+    align-self: end;
+  }
+`;
+
+const StyledSidebarLinks = styled.div`
+  @media only screen and (min-width: 600px) {
+    grid-column: -2 / -1;
+    grid-template-rows: repeat(3, 1fr);
+    align-self: center;
+  }
+`;
+
+const StyledSidebarSocials = styled.div`
+  @media only screen and (min-width: 600px) {
+    grid-column: -2/-1;
+  }
 `;
 
 const Sidebar = () => {
   return (
     <StyledSidebar>
-      <div
-        style={{
-          gridColumn: "-2/-1",
-          fontSize: "32px",
-          alignSelf: "end",
-        }}
-      >
+      <StyledSidebarTitle>
         <Link to="/" style={{ color: "#000000" }}>
           <strong>draw with kristi</strong>
         </Link>
-      </div>
-      <div
-        style={{
-          gridColumn: "-2/-1",
-          gridTemplateRows: "repeat(3, 1fr)",
-          alignSelf: "center",
-        }}
-      >
+      </StyledSidebarTitle>
+      <StyledSidebarLinks>
         <ul
           style={{
             padding: 0,
@@ -59,10 +76,10 @@ const Sidebar = () => {
             <Link to="/cart">Cart</Link>
           </li>
         </ul>
-      </div>
-      <div style={{ gridColumn: "-2/-1" }}>
+      </StyledSidebarLinks>
+      <StyledSidebarSocials>
         <Socials />
-      </div>
+      </StyledSidebarSocials>
     </StyledSidebar>
   );
 };

@@ -3,6 +3,7 @@ import styled from "styled-components";
 const StyledSection = styled.section`
   margin-top: 24px;
   display: grid;
+
   @media (min-width: 360px) {
     gap: 16px;
     grid-template-columns: repeat(1, 1fr);
@@ -10,8 +11,11 @@ const StyledSection = styled.section`
   @media (min-width: 430px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (min-width: 500px) {
+  @media (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 600px) {
+    width: 80%;
   }
 `;
 

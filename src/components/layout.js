@@ -12,7 +12,7 @@ const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY);
 const StyledLayout = styled.div`
   display: grid;
   font-family: Merriweather, sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 100vh;
   width: 100vw;
 
@@ -28,13 +28,23 @@ const StyledLayout = styled.div`
     grid-template-columns: 4fr 9fr;
     grid-column-gap: 50px;
   }
+
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
 `;
 
 const StyledBody = styled.main`
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  overflow-y: scroll;
   height: 100%;
+  justify-items: center;
+
+  @media only screen and (min-width: 600px) {
+    overflow-y: scroll;
+    grid-template-columns: 2fr 1fr;
+  }
 `;
 
 const Layout = ({ children }) => {

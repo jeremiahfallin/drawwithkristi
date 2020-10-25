@@ -49,7 +49,6 @@ export default function CartItems() {
         <StyledCartTitle>{cartEntry.name}</StyledCartTitle>
         <StyledCartBody>
           <StyledCartImage src={cartEntry.image} alt={cartEntry.name} />
-          {/* <StyledCartPrice>Total: {cartEntry.formattedValue}</StyledCartPrice> */}
           <StyledCartItemQuantityContainer>
             <StyledCartQuantity
               id="quantity-select"

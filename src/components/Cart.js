@@ -7,28 +7,10 @@ import styled from "styled-components";
 const StyledCart = styled.section`
   margin-top: 24px;
   display: grid;
-  grid-auto-rows: 124px;
+  grid-auto-rows: 148px;
   gap: 16px;
   grid-auto-flow: row;
-  /* @media (min-width: 360px) {
-    gap: 16px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: 500px) {
-    grid-template-columns: repeat(3, 1fr);
-  } */
 `;
-
-// const StyledCart = styled.section`
-//   display: flex;
-//   flex-direction: column;
-//   margin-top: 24px;
-//   overflow-x: hidden;
-//   @media (min-width: 430px) {
-//     display: grid;
-//     grid-auto-rows: auto;
-//   }
-// `;
 
 const StyledCheckoutPage = styled.div`
   display: grid;

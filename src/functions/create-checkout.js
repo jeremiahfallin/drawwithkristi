@@ -7,8 +7,6 @@ exports.handler = async ({ body }) => {
   const validatedQuantity = quantity =>
     quantity > 0 && quantity <= 10 ? quantity : 1;
 
-  console.log(data);
-
   const lineItems = [];
   for (let sku in data) {
     lineItems.push({

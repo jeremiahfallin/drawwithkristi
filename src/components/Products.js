@@ -1,6 +1,6 @@
 import React from "react";
 import { useShoppingCart, formatCurrencyString } from "use-shopping-cart";
-import inventory from "../functions/data/products.json";
+import inventory from "../../functions/data/products.json";
 import {
   InventoryContainer,
   StyledSection,

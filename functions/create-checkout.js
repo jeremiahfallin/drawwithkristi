@@ -6,16 +6,18 @@ exports.handler = async ({ body }) => {
   const product = sku => inventory.find(p => p.sku === sku);
   const validatedQuantity = quantity =>
     quantity > 0 && quantity <= 10 ? quantity : 1;
-
+  console.log(data);
   const lineItems = [];
   for (let sku in data) {
+    const p = product(sku);
+    const q = validatedQuantity(data[sku]);
     lineItems.push({
-      name: product(sku).name,
-      description: product(sku).description,
-      images: [product(sku).image],
-      amount: product(sku).amount,
-      currency: product(sku).currency,
-      quantity: validatedQuantity(data[sku]),
+      name: p.name,
+      description: p.description,
+      images: [p.image],
+      amount: p.amount,
+      currency: p.currency,
+      quantity: q,
     });
   }
 
@@ -54,8 +56,8 @@ exports.handler = async ({ body }) => {
         quantity: 1,
       },
     ],
-    success_url: "https://www.learnwithjason.dev/purchased",
-    cancel_url: "https://www.learnwithjason.dev/store",
+    success_url: "https://drawwithkristi.netlify.app",
+    cancel_url: "https://drawwithkristi.netlify.app/404",
   });
 
   return {

@@ -55,6 +55,7 @@ export default function Cart() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
       },
       body: JSON.stringify(data),
     }).then(res => res.json());

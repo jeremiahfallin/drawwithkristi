@@ -1,2 +1,4 @@
 [build]
-  functions = "src/functions"
+  command = "gatsby build"
+  functions = "functions"
+  publish = "public"

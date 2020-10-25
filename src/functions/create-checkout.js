@@ -2,9 +2,24 @@ const stripe = require("stripe")(process.env.STRIPE_API_SECRET);
 const inventory = require("./data/products.json");
 
 exports.handler = async ({ body }) => {
-  const { sku, quantity } = JSON.parse(body);
-  const product = inventory.find(p => p.sku === sku);
-  const validatedQuantity = quantity > 0 && quantity <= 10 ? quantity : 1;
+  const data = JSON.parse(body);
+  const product = sku => inventory.find(p => p.sku === sku);
+  const validatedQuantity = quantity =>
+    quantity > 0 && quantity <= 10 ? quantity : 1;
+
+  console.log(data);
+
+  const lineItems = [];
+  for (let sku in data) {
+    lineItems.push({
+      name: product(sku).name,
+      description: product(sku).description,
+      images: [product(sku).image],
+      amount: product(sku).amount,
+      currency: product(sku).currency,
+      quantity: validatedQuantity(data[sku]),
+    });
+  }
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
@@ -31,14 +46,7 @@ exports.handler = async ({ body }) => {
       ],
     },
     line_items: [
-      {
-        name: product.name,
-        description: product.description,
-        images: [product.image],
-        amount: product.amount,
-        currency: product.currency,
-        quantity: validatedQuantity,
-      },
+      ...lineItems,
       {
         name: "Shipping and Handling",
         description: "Flat rate shipping anywhere in the world.",

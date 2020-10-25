@@ -29,6 +29,8 @@ const StyledCartHeaderTitle = styled.h2`
 export default function CartItems() {
   const { cartDetails, setItemQuantity, removeItem } = useShoppingCart();
 
+  console.log(cartDetails);
+
   const options = [];
   for (let quantity = 1; quantity <= 10; ++quantity)
     options.push(

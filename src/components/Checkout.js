@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
+import { loadStripe } from "@stripe/stripe-js";
 import { useShoppingCart, formatCurrencyString } from "use-shopping-cart";
 import styled from "styled-components";
+
+const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY);
 
 const StyledCheckout = styled.article`
   display: flex;
@@ -27,18 +30,46 @@ const StyledCartButton = styled.button`
 
 export default function Cart() {
   const [status, setStatus] = useState("idle");
-  const { redirectToCheckout, cartCount, totalPrice } = useShoppingCart();
+  const { cartDetails, cartCount, totalPrice } = useShoppingCart();
 
-  async function handleClick(event) {
+  // async function handleClick(event) {
+  //   event.preventDefault();
+  //   if (cartCount > 0) {
+  //     setStatus("idle");
+  //     const error = await redirectToCheckout();
+  //     if (error) setStatus("redirect-error");
+  //   } else {
+  //     setStatus("missing-items");
+  //   }
+  // }
+
+  const handleClick = async event => {
     event.preventDefault();
-    if (cartCount > 0) {
-      setStatus("idle");
-      const error = await redirectToCheckout();
-      if (error) setStatus("redirect-error");
-    } else {
-      setStatus("missing-items");
+
+    const data = {};
+    for (let sku in cartDetails) {
+      data[sku] = cartDetails[sku].quantity;
     }
-  }
+
+    const response = await fetch("/.netlify/functions/create-checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then(res => res.json());
+
+    const stripe = await stripePromise;
+
+    const { error } = await stripe.redirectToCheckout({
+      sessionId: response.sessionId,
+    });
+
+    if (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <StyledCheckout>
       {status === "missing-items" && (

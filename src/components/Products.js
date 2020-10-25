@@ -15,7 +15,7 @@ import {
 } from "./styles";
 
 const Products = () => {
-  const { addItem, cartDetails, cartCount } = useShoppingCart();
+  const { addItem } = useShoppingCart();
 
   const handleSubmit = async (event, product) => {
     event.preventDefault();

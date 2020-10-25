@@ -5,16 +5,17 @@ import Checkout from "./Checkout";
 import styled from "styled-components";
 
 const StyledCart = styled.section`
+  display: flex;
+  flex-direction: column;
   margin-top: 24px;
-  display: grid;
-  grid-auto-rows: 124px;
-  gap: 16px;
-  grid-auto-flow: row;
-  /* @media (min-width: 360px) {
+
+  @media (min-width: 430px) {
+    display: grid;
+    grid-auto-rows: 124px;
     gap: 16px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
   }
-  @media (min-width: 500px) {
+  /* @media (min-width: 500px) {
     grid-template-columns: repeat(3, 1fr);
   } */
 `;
@@ -24,6 +25,11 @@ const StyledCheckoutPage = styled.div`
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 50px;
   grid-column: span 2;
+
+  @media (min-width: 360px) {
+    gap: 16px;
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const StyledCheckout = styled.div`

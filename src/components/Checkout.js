@@ -61,6 +61,7 @@ export default function Cart() {
     }).then(res => res.json());
 
     const stripe = await stripePromise;
+    console.log(response);
 
     const { error } = await stripe.redirectToCheckout({
       sessionId: response.sessionId,

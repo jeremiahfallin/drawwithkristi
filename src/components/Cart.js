@@ -9,6 +9,10 @@ const StyledCart = styled.section`
   grid-auto-rows: 148px;
   gap: 16px;
   grid-auto-flow: row;
+
+  @media only screen and (max-width: 600px) {
+    padding-left: 10px;
+  }
 `;
 
 const StyledCheckoutPage = styled.div`

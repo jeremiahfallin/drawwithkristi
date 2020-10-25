@@ -7,7 +7,7 @@ const StyledProductButton = styled.button`
   color: white;
   font-size: 16px;
   font-weight: 800;
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
   padding: 8px;
   text-shadow: 0.05em 0.05em #4f4f4f99, 0.05em -0.05em #4f4f4f99,
     -0.05em 0.05em #4f4f4f99, -0.05em -0.05em #4f4f4f99;

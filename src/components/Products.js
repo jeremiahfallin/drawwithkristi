@@ -41,13 +41,14 @@ const Products = () => {
             <StyledProductDescription>
               {product.description}
             </StyledProductDescription>
-            <StyledProductPrice>
-              {formatCurrencyString({
-                value: product.price,
-                currency: product.currency,
-              })}
-            </StyledProductPrice>
+
             <StyledPaymentForm onSubmit={e => handleSubmit(e, product)}>
+              <StyledProductPrice>
+                {formatCurrencyString({
+                  value: product.price,
+                  currency: product.currency,
+                })}
+              </StyledProductPrice>
               <StyledQuantityLabel htmlFor="quantity">
                 Quantity
               </StyledQuantityLabel>

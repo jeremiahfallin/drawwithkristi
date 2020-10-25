@@ -5,7 +5,6 @@ const StyledCartBody = styled.div`
   flex-flow: row;
   justify-content: space-between;
   height: 100%;
-  align-items: center;
 `;
 
 export default StyledCartBody;

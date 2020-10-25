@@ -28,10 +28,6 @@ const StyledLayout = styled.div`
     grid-template-columns: 4fr 9fr;
     grid-column-gap: 50px;
   }
-
-  @media screen and (max-width: 100px) {
-    grid-template-columns: 4fr 9fr;
-  }
 `;
 
 const StyledBody = styled.main`

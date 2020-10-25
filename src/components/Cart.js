@@ -5,15 +5,15 @@ import Checkout from "./Checkout";
 import styled from "styled-components";
 
 const StyledCart = styled.section`
+  display: flex;
+  flex-direction: column;
   margin-top: 24px;
-  display: grid;
-  grid-auto-rows: auto;
-  gap: 16px;
 
-  @media (min-width: 500px) {
+  @media (min-width: 430px) {
+    display: grid;
+    grid-auto-rows: auto;
     gap: 16px;
     grid-auto-flow: row;
-    grid-template-columns: repeat(1, 1fr);
   }
 
   /* @media (min-width: 500px) {

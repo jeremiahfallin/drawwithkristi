@@ -9,7 +9,6 @@ import {
   StyledCartButton,
   StyledCartQuantity,
   StyledCartItemQuantityContainer,
-  StyledCartQuantityText,
 } from "./styles";
 
 import styled from "styled-components";

@@ -11,7 +11,7 @@ const StyledCart = styled.section`
 
   @media (min-width: 430px) {
     display: grid;
-    grid-auto-rows: 124px;
+    grid-auto-rows: auto;
     gap: 16px;
     grid-auto-flow: row;
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import { loadStripe } from "@stripe/stripe-js";
 import { useShoppingCart, formatCurrencyString } from "use-shopping-cart";
 import inventory from "../functions/data/products.json";
 import {

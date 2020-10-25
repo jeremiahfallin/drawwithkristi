@@ -19,19 +19,7 @@ const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY);
 const Products = () => {
   const { addItem } = useShoppingCart();
 
-  // const handleSubmit = async (event, product) => {
-  //   event.preventDefault();
-  //   const form = new FormData(event.target);
-
-  //   const data = {
-  //     sku: form.get("sku"),
-  //     quantity: Number(form.get("quantity")),
-  //   };
-
-  //   addItem(product, quantity);
-  // };
-
-  const handleSubmit = async event => {
+  const handleSubmit = async (event, product) => {
     event.preventDefault();
     const form = new FormData(event.target);
 
@@ -40,26 +28,38 @@ const Products = () => {
       quantity: Number(form.get("quantity")),
     };
 
-    // TODO send to serverless function
-    const response = await fetch("/.netlify/functions/create-checkout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then(res => res.json());
-
-    // TODO get the session ID and redirect to checkout
-    const stripe = await stripePromise;
-
-    const { error } = await stripe.redirectToCheckout({
-      sessionId: response.sessionId,
-    });
-
-    if (error) {
-      console.error(error);
-    }
+    addItem(product, quantity);
   };
+
+  // const handleSubmit = async event => {
+  //   event.preventDefault();
+  //   const form = new FormData(event.target);
+
+  //   const data = {
+  //     sku: form.get("sku"),
+  //     quantity: Number(form.get("quantity")),
+  //   };
+
+  //   // TODO send to serverless function
+  //   const response = await fetch("/.netlify/functions/create-checkout", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(data),
+  //   }).then(res => res.json());
+
+  //   // TODO get the session ID and redirect to checkout
+  //   const stripe = await stripePromise;
+
+  //   const { error } = await stripe.redirectToCheckout({
+  //     sessionId: response.sessionId,
+  //   });
+
+  //   if (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   return (
     <StyledSection>

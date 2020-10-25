@@ -8,6 +8,7 @@ const StyledCart = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 24px;
+  overflow-x: hidden;
 
   @media (min-width: 430px) {
     display: grid;

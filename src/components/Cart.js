@@ -1,5 +1,4 @@
 import React from "react";
-import { useShoppingCart, formatCurrencyString } from "use-shopping-cart";
 import CartItems from "./CartItems";
 import Checkout from "./Checkout";
 import styled from "styled-components";
@@ -36,8 +35,6 @@ const StyledCheckout = styled.div`
 `;
 
 const Cart = () => {
-  const { cartDetails, cartCount, totalPrice } = useShoppingCart();
-
   return (
     <StyledCheckoutPage>
       <StyledCart>

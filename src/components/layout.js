@@ -7,7 +7,7 @@ import { CartProvider } from "use-shopping-cart";
 import Sidebar from "./Sidebar";
 import "./layout.css";
 
-const stripePromise = loadStripe("pk_test_oX4JE5kA5IdPpwn27zqn7jLi00odshjAop");
+const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY);
 
 const StyledLayout = styled.div`
   display: grid;

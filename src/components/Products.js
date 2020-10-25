@@ -24,12 +24,7 @@ const Products = () => {
     event.preventDefault();
     const form = new FormData(event.target);
 
-    const data = {
-      sku: form.get("sku"),
-      quantity: Number(form.get("quantity")),
-    };
-
-    addItem(product, quantity);
+    addItem(product, Number(form.get("quantity")));
   };
 
   // const handleSubmit = async event => {

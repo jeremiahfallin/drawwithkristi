@@ -5,6 +5,9 @@ const StyledSection = styled.section`
   display: grid;
   @media (min-width: 360px) {
     gap: 16px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media (min-width: 430px) {
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: 500px) {

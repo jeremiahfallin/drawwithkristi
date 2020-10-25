@@ -55,13 +55,11 @@ export default function Cart() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
       body: JSON.stringify(data),
     }).then(res => res.json());
 
     const stripe = await stripePromise;
-    console.log(response);
 
     const { error } = await stripe.redirectToCheckout({
       sessionId: response.sessionId,

@@ -6,7 +6,7 @@ exports.handler = async ({ body }) => {
   const product = sku => inventory.find(p => p.sku === sku);
   const validatedQuantity = quantity =>
     quantity > 0 && quantity <= 10 ? quantity : 1;
-  console.log(data);
+
   const lineItems = [];
   for (let sku in data) {
     const p = product(sku);
@@ -15,7 +15,7 @@ exports.handler = async ({ body }) => {
       name: p.name,
       description: p.description,
       images: [p.image],
-      amount: p.amount,
+      amount: p.price,
       currency: p.currency,
       quantity: q,
     });

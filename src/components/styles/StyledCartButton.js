@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledCartButton = styled.button`
-  background: #44c4e7;
+  background: #dce6ff;
   border: none;
   border-radius: 5px;
   color: white;

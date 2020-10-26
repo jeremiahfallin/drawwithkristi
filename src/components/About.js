@@ -2,6 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
+import Instagram from "./Instagram";
 
 const StyledAbout = styled.div`
   display: grid;
@@ -50,7 +51,7 @@ const StyledAboutImage = styled.div`
 `;
 
 const About = () => {
-  return <StyledAbout></StyledAbout>;
+  return <Instagram />;
 };
 
 export default About;

@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, Img, graphql } from "gatsby";
 import styled from "styled-components";
 
 import Socials from "./Socials";
+import DWKLogo from "../images/logo.png";
 
 const StyledSidebar = styled.div`
   display: grid;
@@ -28,6 +29,11 @@ const StyledSidebar = styled.div`
 `;
 
 const StyledSidebarTitle = styled.div`
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
   @media only screen and (min-width: 600px) {
     grid-column: -2/-1;
     font-size: 32px;
@@ -49,23 +55,36 @@ const StyledSidebarSocials = styled.div`
   }
 `;
 
-const Sidebar = () => {
+const StyledLogo = styled.img`
+  height: 100px;
+  width: auto;
+  border-radius: 50px;
+`;
+
+const StyledSidebarLinksList = styled.ul`
+  padding: 0;
+  list-style-type: none;
+  float: left;
+  margin-left: 0;
+
+  @media only screen and (max-width: 600px) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+`;
+
+const Sidebar = ({ data }) => {
   return (
     <StyledSidebar>
       <StyledSidebarTitle>
         <Link to="/" style={{ color: "#000000" }}>
-          <strong>draw with kristi</strong>
+          <StyledLogo src={DWKLogo} alt="Draw With Kristi logo" />
         </Link>
       </StyledSidebarTitle>
       <StyledSidebarLinks>
-        <ul
-          style={{
-            padding: 0,
-            listStyleType: "none",
-            float: "left",
-            marginLeft: 0,
-          }}
-        >
+        <StyledSidebarLinksList>
           <li>
             <Link to="/">Store</Link>
           </li>
@@ -75,7 +94,7 @@ const Sidebar = () => {
           <li>
             <Link to="/cart">Cart</Link>
           </li>
-        </ul>
+        </StyledSidebarLinksList>
       </StyledSidebarLinks>
       <StyledSidebarSocials>
         <Socials />
@@ -83,5 +102,18 @@ const Sidebar = () => {
     </StyledSidebar>
   );
 };
+
+export const query = graphql`
+  query LogoQuery {
+    file(relativePath: { eq: "images/corgi.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
 
 export default Sidebar;

@@ -89,7 +89,7 @@ const Sidebar = ({ data }) => {
             <Link to="/">Store</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/instagram">IG Feed</Link>
           </li>
           <li>
             <Link to="/cart">Cart</Link>

@@ -111,7 +111,7 @@ export default function Instagram() {
           Grams
         </span>
       </h3>
-      {!gramz.length && <p>One sec, getting the gramz...</p>}
+      {!gramz.length && <p>Retrieving feed from the Gram...</p>}
       <Stories />
       {gramz.length ? <h4>Posts</h4> : null}
       <InstaStyles>

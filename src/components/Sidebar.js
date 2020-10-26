@@ -56,7 +56,7 @@ const StyledSidebarSocials = styled.div`
 `;
 
 const StyledLogo = styled.img`
-  height: 100px;
+  height: 150px;
   width: auto;
   border-radius: 50px;
 `;

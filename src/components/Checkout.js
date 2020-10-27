@@ -14,8 +14,8 @@ const StyledCheckout = styled.article`
   width: 50%;
 `;
 
-const StyledCartButton = styled.button`
-  background: #44c4e7;
+const StyledCheckoutButton = styled.button`
+  background: #dce6ff;
   border: none;
   border-radius: 5px;
   color: white;
@@ -90,7 +90,7 @@ export default function Cart() {
           })}
         </div>
       </div>
-      <StyledCartButton onClick={handleClick}>Checkout</StyledCartButton>
+      <StyledCheckoutButton onClick={handleClick}>Checkout</StyledCheckoutButton>
     </StyledCheckout>
   );
 }

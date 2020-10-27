@@ -1,4 +1,4 @@
-// id: 41065882662
+// from: https://github.com/wesbos/wesbos/blob/master/functions/instagram.js
 
 require("isomorphic-fetch");
 

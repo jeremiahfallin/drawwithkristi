@@ -4,16 +4,22 @@ import { FaInstagram } from "react-icons/fa";
 
 import { StyledSection } from "./styles";
 
-const InstaStyles = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem;
-  @media (max-width: 320px) {
-    grid-template-columns: 1fr;
-    img {
-      width: 100%;
-    }
+const StyledInstaTitle = styled.span`
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  a {
+    color: #ff74ab;
   }
+`;
+
+const StyledIcon = styled.a`
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 10px;
 `;
 
 function useInstagram() {
@@ -33,19 +39,28 @@ export default function Instagram() {
   return (
     <div>
       <h3>
-        <span className="highlight">
-          <a
+        <StyledInstaTitle>
+          <StyledIcon
             href="https://instagram.com/drawwithkristi"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram style={{ strokeWidth: 15 }} />
+            <FaInstagram
+              style={{
+                color: "black",
+                height: "100%",
+                alignSelf: "center",
+                strokeWidth: 15,
+                padding: "0 5px",
+              }}
+            />
             @drawwithkristi{" "}
-          </a>
-        </span>
+          </StyledIcon>
+        </StyledInstaTitle>
+        {!gramz.length && <p>Retrieving feed from the Gram...</p>}
+        {gramz.length ? <h4>Posts</h4> : null}
       </h3>
-      {!gramz.length && <p>Retrieving feed from the Gram...</p>}
-      {gramz.length ? <h4>Posts</h4> : null}
+
       <StyledSection>
         {gramz.map(gram => (
           <a href={gram.url} key={gram.id}>

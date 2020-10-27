@@ -62,10 +62,14 @@ const StyledLogo = styled.img`
 `;
 
 const StyledSidebarLinksList = styled.ul`
+  display: flex;
+  flex-direction: column;
   padding: 0;
   list-style-type: none;
   float: left;
   margin-left: 0;
+  align-items: center;
+  width: 100%;
 
   @media only screen and (max-width: 600px) {
     height: 100%;

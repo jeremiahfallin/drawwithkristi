@@ -6,8 +6,9 @@ import instagram from "../assets/instagram.svg";
 import twitch from "../assets/twitch.svg";
 
 const StyledSocials = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media only screen and (max-width: 600px) {
     display: flex;

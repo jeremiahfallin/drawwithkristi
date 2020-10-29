@@ -39,7 +39,7 @@ const StyledLayout = styled.div`
 const StyledBody = styled.main`
   display: grid;
   height: 100%;
-  justify-items: center;
+  /* justify-items: center; */
 
   @media only screen and (min-width: 600px) {
     overflow-y: scroll;
@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;

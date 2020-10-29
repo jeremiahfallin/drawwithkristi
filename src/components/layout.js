@@ -39,7 +39,8 @@ const StyledLayout = styled.div`
 const StyledBody = styled.main`
   display: grid;
   height: 100%;
-  /* justify-items: center; */
+  justify-items: center;
+  width: 100%;
 
   @media only screen and (min-width: 600px) {
     overflow-y: scroll;

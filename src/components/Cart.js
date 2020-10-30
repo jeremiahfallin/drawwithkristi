@@ -49,9 +49,7 @@ const StyledCheckout = styled.div`
 const Cart = () => {
   return (
     <StyledCartSection>
-      <StyledCart>
-        <CartItems />
-      </StyledCart>
+      <CartItems />
       <StyledCheckout>
         <div />
         <Checkout />

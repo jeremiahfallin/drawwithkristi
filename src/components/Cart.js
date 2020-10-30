@@ -18,8 +18,7 @@ const StyledCart = styled.section`
 const StyledCheckoutPage = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-column-gap: 50px;
-  grid-column: span 2;
+  grid-column-gap: 25px;
 `;
 
 const StyledCheckout = styled.div`

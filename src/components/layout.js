@@ -39,12 +39,14 @@ const StyledLayout = styled.div`
 const StyledBody = styled.main`
   display: grid;
   height: 100%;
-  justify-items: center;
   width: 100%;
 
   @media only screen and (min-width: 600px) {
     overflow-y: scroll;
     grid-template-columns: 2fr 1fr;
+  }
+  @media only screen and (max-width: 600px) {
+    justify-items: center;
   }
 `;
 

@@ -36,7 +36,7 @@ const StyledLayout = styled.div`
   }
 `;
 
-const StyledBody = styled.main`
+const StyledBody = styled.div`
   display: grid;
   height: 100%;
   width: 100%;

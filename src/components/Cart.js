@@ -50,10 +50,6 @@ const Cart = () => {
   return (
     <StyledCartSection>
       <CartItems />
-      <StyledCheckout>
-        <div />
-        <Checkout />
-      </StyledCheckout>
     </StyledCartSection>
   );
 };

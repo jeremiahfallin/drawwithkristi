@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledSection = styled.section`
+const StyledProductSection = styled.section`
   margin-top: 24px;
   display: grid;
 
@@ -19,4 +19,4 @@ const StyledSection = styled.section`
   }
 `;
 
-export default StyledSection;
+export default StyledProductSection;

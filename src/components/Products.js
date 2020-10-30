@@ -3,7 +3,7 @@ import { useShoppingCart, formatCurrencyString } from "use-shopping-cart";
 import inventory from "../../functions/data/products.json";
 import {
   InventoryContainer,
-  StyledSection,
+  StyledProductSection,
   StyledPaymentForm,
   StyledProductButton,
   StyledProductDescription,
@@ -11,7 +11,7 @@ import {
   StyledProductPrice,
   StyledProductQuantity,
   StyledProductTitle,
-  StyledQuantityLabel,
+  StyledQuantityLabel
 } from "./styles";
 
 const Products = () => {
@@ -25,7 +25,7 @@ const Products = () => {
   };
 
   return (
-    <StyledSection>
+    <StyledProductSection>
       {inventory.map(product => (
         <InventoryContainer key={product.sku}>
           <div>
@@ -41,7 +41,7 @@ const Products = () => {
               <StyledProductPrice>
                 {formatCurrencyString({
                   value: product.price,
-                  currency: product.currency,
+                  currency: product.currency
                 })}
               </StyledProductPrice>
               <StyledQuantityLabel htmlFor="quantity">
@@ -65,7 +65,7 @@ const Products = () => {
           </div>
         </InventoryContainer>
       ))}
-    </StyledSection>
+    </StyledProductSection>
   );
 };
 

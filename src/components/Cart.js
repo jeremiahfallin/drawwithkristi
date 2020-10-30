@@ -3,6 +3,8 @@ import CartItems from "./CartItems";
 import Checkout from "./Checkout";
 import styled from "styled-components";
 
+import { StyledCartSection } from "./styles";
+
 const StyledCart = styled.section`
   margin-top: 24px;
   display: grid;
@@ -39,7 +41,7 @@ const StyledCheckout = styled.div`
 
 const Cart = () => {
   return (
-    <StyledCheckoutPage>
+    <StyledCartSection>
       <StyledCart>
         <CartItems />
       </StyledCart>
@@ -47,7 +49,7 @@ const Cart = () => {
         <div />
         <Checkout />
       </StyledCheckout>
-    </StyledCheckoutPage>
+    </StyledCartSection>
   );
 };
 

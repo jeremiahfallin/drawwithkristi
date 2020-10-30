@@ -7,7 +7,7 @@ import StyledProductPrice from "./StyledProductPrice";
 import StyledProductQuantity from "./StyledProductQuantity";
 import StyledProductTitle from "./StyledProductTitle";
 import StyledQuantityLabel from "./StyledQuantityLabel";
-import StyledSection from "./StyledSection";
+import StyledProductSection from "./StyledProductSection";
 import StyledCartItemContainer from "./StyledCartItemContainer";
 import StyledCartBody from "./StyledCartBody";
 import StyledCartImage from "./StyledCartImage";
@@ -17,10 +17,11 @@ import StyledCartButton from "./StyledCartButton";
 import StyledCartQuantity from "./StyledCartQuantity";
 import StyledCartItemQuantityContainer from "./StyledCartItemQuantityContainer";
 import StyledCartQuantityText from "./StyledCartQuantityText";
+import StyledCartSection from "./StyledCartSection";
 
 export {
   InventoryContainer,
-  StyledSection,
+  StyledProductSection,
   StyledPaymentForm,
   StyledProductButton,
   StyledProductDescription,
@@ -36,6 +37,7 @@ export {
   StyledCartPrice,
   StyledCartButton,
   StyledCartQuantity,
+  StyledCartSection,
   StyledCartItemQuantityContainer,
-  StyledCartQuantityText,
+  StyledCartQuantityText
 };

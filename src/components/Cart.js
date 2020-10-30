@@ -6,12 +6,19 @@ import styled from "styled-components";
 import { StyledCartSection } from "./styles";
 
 const StyledCart = styled.section`
-  margin-top: 24px;
+  /* margin-top: 24px;
   display: grid;
   grid-auto-rows: 148px;
   gap: 16px;
   grid-auto-flow: row;
-  width: 100%;
+  width: 100%; */
+
+  margin-top: 24px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 100%;
+
   @media only screen and (max-width: 600px) {
     padding-left: 10px;
   }

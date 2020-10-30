@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FaInstagram } from "react-icons/fa";
 
-import { StyledSection } from "./styles";
+import { StyledProductSection } from "./styles";
 
 const StyledInstaTitle = styled.span`
   height: 100%;
@@ -51,7 +51,7 @@ export default function Instagram() {
                 height: "100%",
                 alignSelf: "center",
                 strokeWidth: 15,
-                padding: "0 5px",
+                padding: "0 5px"
               }}
             />
             @drawwithkristi{" "}
@@ -61,7 +61,7 @@ export default function Instagram() {
         {gramz.length ? <h4>Posts</h4> : null}
       </h3>
 
-      <StyledSection>
+      <StyledProductSection>
         {gramz.map(gram => (
           <a href={gram.url} key={gram.id}>
             <img
@@ -72,7 +72,7 @@ export default function Instagram() {
             />
           </a>
         ))}
-      </StyledSection>
+      </StyledProductSection>
     </div>
   );
 }

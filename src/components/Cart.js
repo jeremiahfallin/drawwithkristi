@@ -6,18 +6,20 @@ import styled from "styled-components";
 import { StyledCartSection } from "./styles";
 
 const StyledCart = styled.section`
-  /* margin-top: 24px;
+  margin-top: 24px;
   display: grid;
   grid-auto-rows: 148px;
   gap: 16px;
   grid-auto-flow: row;
-  width: 100%; */
+  width: 100%;
+  min-height: 0;
+  min-width: 0;
 
-  margin-top: 24px;
+  /* margin-top: 24px;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  height: 100%;
+  height: 100%; */
 
   @media only screen and (max-width: 600px) {
     padding-left: 10px;
@@ -28,6 +30,8 @@ const StyledCheckoutPage = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 25px;
+  min-height: 0;
+  min-width: 0;
 `;
 
 const StyledCheckout = styled.div`
@@ -48,9 +52,15 @@ const StyledCheckout = styled.div`
 
 const Cart = () => {
   return (
-    <StyledCartSection>
-      <CartItems />
-    </StyledCartSection>
+    <StyledCheckoutPage>
+      <StyledCart>
+        <CartItems />
+      </StyledCart>
+      <StyledCheckout>
+        <div />
+        <Checkout />
+      </StyledCheckout>
+    </StyledCheckoutPage>
   );
 };
 

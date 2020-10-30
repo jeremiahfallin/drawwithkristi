@@ -40,6 +40,8 @@ const StyledBody = styled.div`
   display: grid;
   height: 100%;
   width: 100%;
+  min-width: 0;
+  min-height: 0;
 
   @media only screen and (min-width: 600px) {
     overflow-y: scroll;

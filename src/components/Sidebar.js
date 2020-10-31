@@ -7,10 +7,10 @@ import DWKLogo from "../images/logo.png";
 
 const StyledSidebar = styled.div`
   display: grid;
-  width: 100%;
+
   @media only screen and (min-width: 600px) {
+    position: fixed;
     grid-template-rows: 1fr 2fr 2fr;
-    grid-template-columns: 3fr 2fr;
     grid-row-gap: 30px;
     height: 100vh;
   }
@@ -35,7 +35,6 @@ const StyledSidebarTitle = styled.div`
     justify-items: center;
   }
   @media only screen and (min-width: 600px) {
-    grid-column: -2/-1;
     font-size: 32px;
     align-self: end;
   }
@@ -43,17 +42,12 @@ const StyledSidebarTitle = styled.div`
 
 const StyledSidebarLinks = styled.div`
   @media only screen and (min-width: 600px) {
-    grid-column: -2 / -1;
     grid-template-rows: repeat(3, 1fr);
     align-self: center;
   }
 `;
 
-const StyledSidebarSocials = styled.div`
-  @media only screen and (min-width: 600px) {
-    grid-column: -2/-1;
-  }
-`;
+const StyledSidebarSocials = styled.div``;
 
 const StyledLogo = styled.img`
   height: 200px;

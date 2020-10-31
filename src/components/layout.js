@@ -12,9 +12,9 @@ const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY);
 const StyledLayout = styled.div`
   display: grid;
   font-family: Merriweather, sans-serif;
-  /* overflow: hidden; */
+  overflow: hidden;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 900px) {
@@ -72,7 +72,7 @@ const Layout = ({ children }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

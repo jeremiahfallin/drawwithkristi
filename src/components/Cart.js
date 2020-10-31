@@ -31,8 +31,6 @@ const StyledCheckoutPage = styled.div`
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 25px;
   grid-column: span 2;
-  min-height: 0;
-  min-width: 0;
 `;
 
 const StyledCheckout = styled.div`

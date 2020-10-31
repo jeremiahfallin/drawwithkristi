@@ -1,3 +1,5 @@
+// from: https://github.com/jlengstorf/learnwithjason.dev/blob/main/site/functions/create-checkout.js
+
 const stripe = require("stripe")(process.env.STRIPE_API_SECRET);
 const inventory = require("./data/products.json");
 

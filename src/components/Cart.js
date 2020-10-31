@@ -26,13 +26,6 @@ const StyledCart = styled.section`
   }
 `;
 
-const StyledCheckoutPage = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-column-gap: 25px;
-  grid-column: span 2;
-`;
-
 const StyledCheckout = styled.div`
   display: grid;
   grid-template-rows: 1fr 2fr 2fr;
@@ -51,7 +44,7 @@ const StyledCheckout = styled.div`
 
 const Cart = () => {
   return (
-    <StyledCheckoutPage>
+    <>
       <StyledCart>
         <CartItems />
       </StyledCart>
@@ -59,7 +52,7 @@ const Cart = () => {
         <div />
         <Checkout />
       </StyledCheckout>
-    </StyledCheckoutPage>
+    </>
   );
 };
 

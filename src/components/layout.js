@@ -40,6 +40,7 @@ const StyledBody = styled.div`
   width: 100%;
   min-width: 0;
   min-height: 0;
+  min-width: 0;
 
   @media only screen and (min-width: 600px) {
     grid-template-columns: 2fr 1fr;

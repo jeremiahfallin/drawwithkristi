@@ -11,21 +11,6 @@ import {
   StyledCartItemQuantityContainer,
 } from "./styles";
 
-import styled from "styled-components";
-
-const StyledCartHeader = styled.header`
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  border-bottom: 1px solid lightgrey;
-`;
-
-const StyledCartHeaderTitle = styled.h2`
-  line-height: 1.1;
-  font-size: 2em;
-`;
-
 export default function CartItems() {
   const { cartDetails, setItemQuantity, removeItem } = useShoppingCart();
 
@@ -37,11 +22,7 @@ export default function CartItems() {
       </option>
     );
 
-  const cart = [
-    <StyledCartHeader key="title">
-      <StyledCartHeaderTitle>Shopping Cart</StyledCartHeaderTitle>
-    </StyledCartHeader>,
-  ];
+  const cart = [];
   for (const sku in cartDetails) {
     const cartEntry = cartDetails[sku];
     cart.push(

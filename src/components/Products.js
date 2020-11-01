@@ -11,7 +11,7 @@ import {
   StyledProductPrice,
   StyledProductQuantity,
   StyledProductTitle,
-  StyledQuantityLabel
+  StyledQuantityLabel,
 } from "./styles";
 
 const Products = () => {
@@ -41,7 +41,7 @@ const Products = () => {
               <StyledProductPrice>
                 {formatCurrencyString({
                   value: product.price,
-                  currency: product.currency
+                  currency: product.currency,
                 })}
               </StyledProductPrice>
               <StyledQuantityLabel htmlFor="quantity">

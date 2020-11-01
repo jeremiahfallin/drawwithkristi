@@ -16,7 +16,7 @@ const StyledSidebar = styled.div`
     height: 100vh;
   }
   li a {
-    color: #ff74ab;
+    color: #ff74ab50;
   }
 
   @media only screen and (max-width: 900px) {
@@ -91,13 +91,19 @@ const Sidebar = ({ data }) => {
       <StyledSidebarLinks>
         <StyledSidebarLinksList>
           <li>
-            <Link to="/">Store</Link>
+            <Link to="/" activeStyle={{ color: "#ff74ab" }}>
+              Store
+            </Link>
           </li>
           <li>
-            <Link to="/instagram">IG Feed</Link>
+            <Link to="/instagram" activeStyle={{ color: "#ff74ab" }}>
+              IG Feed
+            </Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart" activeStyle={{ color: "#ff74ab" }}>
+              Cart
+            </Link>
           </li>
         </StyledSidebarLinksList>
       </StyledSidebarLinks>

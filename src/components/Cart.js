@@ -15,12 +15,6 @@ const StyledCart = styled.section`
   min-height: 0;
   min-width: 0;
 
-  /* margin-top: 24px;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  height: 100%; */
-
   @media only screen and (max-width: 600px) {
     padding-left: 10px;
   }
@@ -45,9 +39,9 @@ const StyledCheckout = styled.div`
 const Cart = () => {
   return (
     <>
-      <StyledCart>
+      <StyledCartSection>
         <CartItems />
-      </StyledCart>
+      </StyledCartSection>
       <StyledCheckout>
         <div />
         <Checkout />

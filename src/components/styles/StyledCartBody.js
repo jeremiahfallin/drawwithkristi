@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const StyledCartBody = styled.div`
-  display: flex;
-  flex-flow: row;
+  display: grid;
+  grid-auto-flow: column;
   justify-content: space-between;
   height: 100%;
 `;

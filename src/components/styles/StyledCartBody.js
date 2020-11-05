@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const StyledCartBody = styled.div`
-  /* display: grid;
+  display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  height: 100%; */
+  height: 100%;
 `;
 
 export default StyledCartBody;

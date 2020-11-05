@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledCartSection = styled.section`
-  margin-top: 24px;
+  /* margin-top: 24px;
   display: grid;
 
   @media (min-width: 360px) {
@@ -16,7 +16,7 @@ const StyledCartSection = styled.section`
   }
   @media (max-width: 600px) {
     width: 80%;
-  }
+  } */
 `;
 
 export default StyledCartSection;

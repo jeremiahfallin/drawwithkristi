@@ -8,10 +8,10 @@ import {
   StyledCartPrice,
   StyledCartButton,
   StyledCartQuantity,
-  StyledCartItemQuantityContainer,
+  StyledCartItemQuantityContainer
 } from "./styles";
 
-export default function CartItems() {
+const CartItems = () => {
   const { cartDetails, setItemQuantity, removeItem } = useShoppingCart();
 
   const options = [];
@@ -43,7 +43,7 @@ export default function CartItems() {
             <StyledCartPrice>
               {formatCurrencyString({
                 value: cartEntry.price,
-                currency: cartEntry.currency,
+                currency: cartEntry.currency
               })}
             </StyledCartPrice>
             <StyledCartButton
@@ -58,5 +58,7 @@ export default function CartItems() {
     );
   }
 
-  return cart;
-}
+  return <div>{cart}</div>;
+};
+
+export default CartItems;

@@ -8,12 +8,7 @@ const StyledCartSection = styled.section`
     gap: 16px;
     grid-template-columns: repeat(1, 1fr);
   }
-  @media (min-width: 430px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+
   @media (max-width: 600px) {
     width: 80%;
   }

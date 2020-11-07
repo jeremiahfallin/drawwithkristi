@@ -1,8 +1,6 @@
 import InventoryContainer from "./InventoryContainer";
 import StyledPaymentForm from "./StyledPaymentForm";
 import StyledQuantityLabel from "./StyledQuantityLabel";
-import StyledCartItemContainer from "./StyledCartItemContainer";
-import StyledCartItemQuantityContainer from "./StyledCartItemQuantityContainer";
 import StyledProductSection, {
   StyledProductButton,
   StyledProductDescription,
@@ -20,6 +18,9 @@ import StyledCartSection, {
   StyledCartQuantity,
   StyledCartQuantityText,
 } from "./Cart.styles";
+import StyledCartItemContainer, {
+  StyledCartItemQuantityContainer,
+} from "./CartItem.styles";
 
 export {
   InventoryContainer,

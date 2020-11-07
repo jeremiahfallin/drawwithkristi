@@ -15,22 +15,9 @@ const StyledCart = styled.section`
   min-height: 0;
   min-width: 0;
 
-  /* margin-top: 24px;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  height: 100%; */
-
   @media only screen and (max-width: 600px) {
     padding-left: 10px;
   }
-`;
-
-const StyledCheckoutPage = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-column-gap: 25px;
-  grid-column: span 2;
 `;
 
 const StyledCheckout = styled.div`
@@ -51,15 +38,15 @@ const StyledCheckout = styled.div`
 
 const Cart = () => {
   return (
-    <StyledCheckoutPage>
-      <StyledCart>
+    <>
+      <StyledCartSection>
         <CartItems />
-      </StyledCart>
+      </StyledCartSection>
       <StyledCheckout>
         <div />
         <Checkout />
       </StyledCheckout>
-    </StyledCheckoutPage>
+    </>
   );
 };
 

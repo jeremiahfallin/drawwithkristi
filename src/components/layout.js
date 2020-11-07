@@ -12,7 +12,6 @@ const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY);
 const StyledLayout = styled.div`
   display: grid;
   font-family: Merriweather, sans-serif;
-  overflow: hidden;
   height: 100vh;
   width: 100%;
 
@@ -32,7 +31,6 @@ const StyledLayout = styled.div`
   @media only screen and (max-width: 600px) {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
   }
 `;
 
@@ -44,7 +42,6 @@ const StyledBody = styled.div`
   min-height: 0;
 
   @media only screen and (min-width: 600px) {
-    overflow-y: scroll;
     grid-template-columns: 2fr 1fr;
   }
   @media only screen and (max-width: 600px) {
@@ -52,7 +49,7 @@ const StyledBody = styled.div`
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ location, children }) => {
   return (
     <CartProvider
       mode="client-only"
@@ -64,7 +61,9 @@ const Layout = ({ children }) => {
       allowedCountries={["US", "GB", "CA"]}
     >
       <StyledLayout>
-        <Sidebar />
+        <div>
+          <Sidebar location={location} />
+        </div>
         <StyledBody>{children}</StyledBody>
       </StyledLayout>
     </CartProvider>

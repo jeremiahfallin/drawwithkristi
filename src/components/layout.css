@@ -4,7 +4,6 @@
 }
 html {
   font-family: sans-serif;
-  overflow-x: initial;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font: 112.5%/1.45em georgia, serif;
@@ -15,7 +14,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 100%;
-  overflow: hidden;
 }
 article,
 aside,

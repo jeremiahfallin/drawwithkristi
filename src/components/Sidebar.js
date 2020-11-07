@@ -7,15 +7,16 @@ import DWKLogo from "../images/logo.png";
 
 const StyledSidebar = styled.div`
   display: grid;
-  width: 100%;
+
   @media only screen and (min-width: 600px) {
+    position: fixed;
     grid-template-rows: 1fr 2fr 2fr;
-    grid-template-columns: 3fr 2fr;
+    /* grid-template-columns: 3fr 2fr; */
     grid-row-gap: 30px;
     height: 100vh;
   }
   li a {
-    color: #ff74ab;
+    color: #ff74ab50;
   }
 
   @media only screen and (max-width: 900px) {
@@ -35,7 +36,7 @@ const StyledSidebarTitle = styled.div`
     justify-items: center;
   }
   @media only screen and (min-width: 600px) {
-    grid-column: -2/-1;
+    /* grid-column: -2/-1; */
     font-size: 32px;
     align-self: end;
   }
@@ -43,7 +44,7 @@ const StyledSidebarTitle = styled.div`
 
 const StyledSidebarLinks = styled.div`
   @media only screen and (min-width: 600px) {
-    grid-column: -2 / -1;
+    /* grid-column: -2 / -1; */
     grid-template-rows: repeat(3, 1fr);
     align-self: center;
   }
@@ -51,7 +52,7 @@ const StyledSidebarLinks = styled.div`
 
 const StyledSidebarSocials = styled.div`
   @media only screen and (min-width: 600px) {
-    grid-column: -2/-1;
+    /* grid-column: -2/-1; */
   }
 `;
 
@@ -90,13 +91,19 @@ const Sidebar = ({ data }) => {
       <StyledSidebarLinks>
         <StyledSidebarLinksList>
           <li>
-            <Link to="/">Store</Link>
+            <Link to="/" activeStyle={{ color: "#ff74ab" }}>
+              Store
+            </Link>
           </li>
           <li>
-            <Link to="/instagram">IG Feed</Link>
+            <Link to="/instagram" activeStyle={{ color: "#ff74ab" }}>
+              IG Feed
+            </Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart" activeStyle={{ color: "#ff74ab" }}>
+              Cart
+            </Link>
           </li>
         </StyledSidebarLinksList>
       </StyledSidebarLinks>

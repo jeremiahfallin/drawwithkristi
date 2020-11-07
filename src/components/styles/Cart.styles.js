@@ -3,11 +3,7 @@ import styled from "styled-components";
 const StyledCartSection = styled.section`
   margin-top: 24px;
   display: grid;
-
-  @media (min-width: 360px) {
-    gap: 16px;
-    grid-template-columns: repeat(1, 1fr);
-  }
+  grid-template-rows: 200px;
 
   @media (max-width: 600px) {
     width: 80%;

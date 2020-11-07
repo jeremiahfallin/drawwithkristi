@@ -8,7 +8,7 @@ import {
   StyledCartPrice,
   StyledCartButton,
   StyledCartQuantity,
-  StyledCartItemQuantityContainer
+  StyledCartItemQuantityContainer,
 } from "./styles";
 
 const CartItems = () => {
@@ -43,7 +43,7 @@ const CartItems = () => {
             <StyledCartPrice>
               {formatCurrencyString({
                 value: cartEntry.price,
-                currency: cartEntry.currency
+                currency: cartEntry.currency,
               })}
             </StyledCartPrice>
             <StyledCartButton
@@ -58,7 +58,7 @@ const CartItems = () => {
     );
   }
 
-  return <div>{cart}</div>;
+  return cart;
 };
 
 export default CartItems;

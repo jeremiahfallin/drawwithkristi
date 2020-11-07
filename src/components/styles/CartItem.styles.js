@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledCartItemContainer = styled.article`
   display: grid;
-  grid-template-rows: 50px minmax(auto, 118px);
+  grid-template-rows: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
   gap: 8px;
 `;
 

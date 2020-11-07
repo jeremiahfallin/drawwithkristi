@@ -1,23 +1,25 @@
 import InventoryContainer from "./InventoryContainer";
 import StyledPaymentForm from "./StyledPaymentForm";
-import StyledProductButton from "./StyledProductButton";
-import StyledProductDescription from "./StyledProductDescription";
-import StyledProductImage from "./StyledProductImage";
-import StyledProductPrice from "./StyledProductPrice";
-import StyledProductQuantity from "./StyledProductQuantity";
-import StyledProductTitle from "./StyledProductTitle";
 import StyledQuantityLabel from "./StyledQuantityLabel";
-import StyledProductSection from "./StyledProductSection";
 import StyledCartItemContainer from "./StyledCartItemContainer";
-import StyledCartBody from "./StyledCartBody";
-import StyledCartImage from "./StyledCartImage";
-import StyledCartTitle from "./StyledCartTitle";
-import StyledCartPrice from "./StyledCartPrice";
-import StyledCartButton from "./StyledCartButton";
-import StyledCartQuantity from "./StyledCartQuantity";
 import StyledCartItemQuantityContainer from "./StyledCartItemQuantityContainer";
-import StyledCartQuantityText from "./StyledCartQuantityText";
-import StyledCartSection from "./StyledCartSection";
+import StyledProductSection, {
+  StyledProductButton,
+  StyledProductDescription,
+  StyledProductImage,
+  StyledProductQuantity,
+  StyledProductTitle,
+  StyledProductPrice,
+} from "./Product.styles";
+import StyledCartSection, {
+  StyledCartBody,
+  StyledCartTitle,
+  StyledCartButton,
+  StyledCartImage,
+  StyledCartPrice,
+  StyledCartQuantity,
+  StyledCartQuantityText,
+} from "./Cart.styles";
 
 export {
   InventoryContainer,
@@ -39,5 +41,5 @@ export {
   StyledCartQuantity,
   StyledCartSection,
   StyledCartItemQuantityContainer,
-  StyledCartQuantityText
+  StyledCartQuantityText,
 };

@@ -51,22 +51,26 @@ export default function Cart() {
       data[sku] = cartDetails[sku].quantity;
     }
 
-    const response = await fetch("/.netlify/functions/create-checkout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then(res => res.json());
+    if (cartCount > 0) {
+      const response = await fetch("/.netlify/functions/create-checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }).then(res => res.json());
 
-    const stripe = await stripePromise;
+      const stripe = await stripePromise;
 
-    const { error } = await stripe.redirectToCheckout({
-      sessionId: response.sessionId,
-    });
+      const { error } = await stripe.redirectToCheckout({
+        sessionId: response.sessionId
+      });
 
-    if (error) {
-      console.error(error);
+      if (error) {
+        setStatus("redirect-error");
+      }
+    } else {
+      setStatus("missing-items");
     }
   };
 
@@ -86,11 +90,13 @@ export default function Cart() {
         <div>
           {formatCurrencyString({
             value: totalPrice,
-            currency: "USD",
+            currency: "USD"
           })}
         </div>
       </div>
-      <StyledCheckoutButton onClick={handleClick}>Checkout</StyledCheckoutButton>
+      <StyledCheckoutButton onClick={handleClick}>
+        Checkout
+      </StyledCheckoutButton>
     </StyledCheckout>
   );
 }

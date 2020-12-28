@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Img, graphql } from "gatsby";
+import { Link } from "gatsby";
 import styled from "styled-components";
 
 import Socials from "./Socials";
@@ -113,18 +113,5 @@ const Sidebar = ({ data }) => {
     </StyledSidebar>
   );
 };
-
-export const query = graphql`
-  query LogoQuery {
-    file(relativePath: { eq: "images/corgi.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
 
 export default Sidebar;

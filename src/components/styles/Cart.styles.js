@@ -40,7 +40,7 @@ const StyledCartButton = styled.button`
 
 const StyledCartImage = styled.img`
   width: auto;
-  height: 100%;
+  height: 150px;
 `;
 
 const StyledCartPrice = styled.p`
